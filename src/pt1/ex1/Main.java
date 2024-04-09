@@ -15,12 +15,6 @@ public class Main {
         files.add(fitxer1);
         files.add(fitxer2);
         files.add(fitxer3);
-        File directori = new File("./files");
-
-//        fitxer1.createNewFile();
-//        fitxer2.createNewFile();
-//        fitxer3.createNewFile();
-//        directori.mkdir();
 
 
         System.out.println("El arxiu mes gran es: " + Main.searchFiles().getName());
