@@ -8,7 +8,14 @@ public class Main {
         File directoriFile = new File(directori);
         File llista[]=directoriFile.listFiles();
         for(File file: llista){
-            file.mkdirs();
+            System.out.println(file.getAbsolutePath());
+            if (!file.exists()){
+                if (file.mkdir()){
+                    System.out.println("Carpeta creada");
+                }else {
+                    System.out.println("Carpeta no creada");
+                }
+            }
         }
     }
-}
+}ºº

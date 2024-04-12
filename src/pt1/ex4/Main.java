@@ -6,8 +6,8 @@ public class Main {
     public static void main(String[] args) {
         String directori = "files";
         File directoriFile = new File(directori);
-        File llista[]=directoriFile.listFiles();
-        for (File file : llista){
+        File llista[] = directoriFile.listFiles();
+        for (File file : llista) {
             System.out.println("Nom: " + file.getName() +
                     " Mida: " + file.length() + "bytes" +
                     " Esta situat: " + file.getPath() +
