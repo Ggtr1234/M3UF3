@@ -16,8 +16,8 @@ public class Main {
 
     public static void main(String[] args) {
         String path = "files/file1.txt";
-        System.out.println(llegirFitxer(path,"h"));
-        System.out.println(counter);
+        System.out.println(llegirFitxer(path,"Hola"));
+        System.out.println("Vegades que surt la cadena: " + counter);
     }
 
     public static String llegirFitxer(String path, String cadena){
@@ -26,17 +26,19 @@ public class Main {
             FileReader fr = new FileReader(path);
             BufferedReader br = new BufferedReader(fr);
             String linia = br.readLine();
-            for (int i = 0; i < linia.length(); i++) {
-                int pos = linia.indexOf(cadena);
-                if (pos != -1){
-                    counter++;
-                }
-            }
+//            System.out.println("linia: "+linia);
+
             while(linia != null){
                 res = res + linia + "\n";
                 linia = br.readLine();
             }
             br.close();
+            System.out.println(res);
+            int pos = res.indexOf(cadena);
+            while (pos != -1){
+                counter++;
+                pos = res.indexOf(cadena,pos + 1);
+            }
             return res;
         }catch (Exception e){
             System.out.println(e.getMessage());
